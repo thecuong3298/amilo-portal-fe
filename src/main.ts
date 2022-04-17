@@ -1,12 +1,12 @@
-import Vue from 'vue'
-import App from './App.vue'
 import router from './router'
 import store from './store'
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
+import './scss/app.scss'
+import { i18n } from '@/shared/config/useI18n'
+import InitApp from '@/shared/config/init-app.conf'
 
-Vue.config.productionTip = false
-
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+const app = InitApp
+app.use(Antd).use(store).use(router)
+app.use(i18n)
+app.mount('#app')
