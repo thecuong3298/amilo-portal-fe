@@ -16,18 +16,18 @@
 
       <!-- Layout Content -->
       <a-layout>
-
         <!-- Layout Header's Conditionally Fixed Wrapper -->
         <DashboardHeader
-          :sidebarCollapsed="sidebarCollapsed"
+          :sidebarCollapsed.sync="sidebarCollapsed"
           :navbarFixed="navbarFixed"
           @toggleSettingsDrawer="toggleSettingsDrawer"
           @toggleSidebar="toggleSidebar"
+          @collapseChange="sidebarCollapsed = $event"
         ></DashboardHeader>
         <!-- / Layout Header's Conditionally Fixed Wrapper -->
 
         <!-- Page Content -->
-        <a-layout-content>
+        <a-layout-content :class="sidebarCollapsed ? 'layout-content-collapse' : ''">
           <router-view/>
         </a-layout-content>
         <!-- / Page Content -->
@@ -70,10 +70,10 @@ export default {
       sidebarColor: 'primary',
 
       // Main sidebar theme : light, white, dark.
-      sidebarTheme: 'light',
+      sidebarTheme: 'white',
 
       // Header fixed status.
-      navbarFixed: false,
+      navbarFixed: true,
 
       // Settings drawer visiblility status.
       showSettingsDrawer: false
@@ -85,15 +85,6 @@ export default {
     },
     toggleSettingsDrawer (value) {
       this.showSettingsDrawer = value
-    },
-    toggleNavbarPosition (value) {
-      this.navbarFixed = value
-    },
-    updateSidebarTheme (value) {
-      this.sidebarTheme = value
-    },
-    updateSidebarColor (value) {
-      this.sidebarColor = value
     }
   },
   computed: {

@@ -38,7 +38,7 @@ export default class AccountService {
           if (account) {
             this.store.commit('authenticated', account)
             if (this.store.getters.currentLanguage !== account.langKey) {
-              this.store.commit('currentLanguage', account.langKey)
+              this.store.dispatch('setLanguage', account.langKey).then()
             }
             if (sessionStorage.getItem('requested-url')) {
               router.replace(sessionStorage.getItem('requested-url') as RouteLocationRaw).then()

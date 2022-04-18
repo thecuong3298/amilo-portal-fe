@@ -3,7 +3,7 @@ import {
   BellFilled,
   GlobalOutlined,
   LockOutlined,
-  LogoutOutlined,
+  LogoutOutlined, MenuFoldOutlined, MenuUnfoldOutlined,
   SettingOutlined,
   UserOutlined
 } from '@ant-design/icons-vue'
@@ -18,6 +18,8 @@ import store from '@/store/index'
     LockOutlined,
     SettingOutlined,
     BellFilled,
+    MenuUnfoldOutlined,
+    MenuFoldOutlined,
     UserOutlined
   },
   props: {
@@ -49,11 +51,11 @@ export default class DashboardHeaderComponent extends Vue {
 
   languages = [
     {
-      key: 'en-US',
+      key: 'en',
       name: 'English'
     },
     {
-      key: 'vi-VN',
+      key: 'vi',
       name: 'Tiếng Việt'
     }
   ]
@@ -83,6 +85,9 @@ export default class DashboardHeaderComponent extends Vue {
     switch (event.key) {
       case 'logout':
         this.logout().then()
+        break
+      case 'login':
+        this.$router.push({ name: 'Sign In' }).then()
         break
     }
   }

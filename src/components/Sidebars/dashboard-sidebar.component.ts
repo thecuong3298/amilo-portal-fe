@@ -31,9 +31,10 @@ import { MENU } from '@/shared/config/menu.conf'
 export default class DashboardSidebarComponent extends Vue {
   menus: MenuModel[] = MENU
 
-  theme = 'dark'
   selectedKeys = ['1']
   openKeys: string[] = []
+
+  inlineCollapsed = true
 
   created () {
     this.selectedKeys = [this.$router.currentRoute.value.fullPath]

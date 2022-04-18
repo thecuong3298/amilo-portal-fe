@@ -28,12 +28,12 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/sign-in',
-    name: 'Sign-In',
+    name: 'Sign In',
     component: () => import('../views/sign-in/Sign-In.vue')
   },
   {
     path: '/sign-up',
-    name: 'Sign-Up',
+    name: 'Sign Up',
     meta: {
       layoutClass: 'layout-sign-up'
     },

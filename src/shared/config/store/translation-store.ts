@@ -2,7 +2,7 @@ import { Module } from 'vuex'
 
 export const translationStore: Module<any, any> = {
   state: {
-    currentLanguage: localStorage.getItem('currentLanguage') || 'vi-VN'
+    currentLanguage: localStorage.getItem('currentLanguage') || 'vi'
   },
   getters: {
     currentLanguage: state => state.currentLanguage

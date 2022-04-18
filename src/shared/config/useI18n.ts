@@ -8,8 +8,8 @@ const i18n = createI18n({
   legacy: false,
   globalInjection: true,
   messages: {
-    'vi-VN': vi,
-    'en-US': en
+    vi,
+    en
   }
 })
 

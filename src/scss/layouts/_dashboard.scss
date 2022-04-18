@@ -25,7 +25,7 @@
 
   // Primary Sidebar
   .ant-layout-sider.sider-primary {
-    width: 250px;
+    width: 270px;
     position: fixed;
     left: 0;
     z-index: 99;
@@ -99,7 +99,7 @@
       border-radius: 0px;
 
       @media(min-width: $lg) {
-        margin: 20px 0 64px 20px;
+        margin: 10px 0 64px 10px;
         padding-top: 13px;
         border-radius: 8px;
       }
@@ -107,10 +107,24 @@
 
     .ant-menu-inline {
       border: none;
+      width: calc(100% - 3px);
 
       .ant-menu-item,
       .ant-menu-submenu-title {
         overflow: visible;
+      }
+    }
+
+    .ant-menu-submenu-selected {
+      background-color: transparent;
+
+      .ant-menu-submenu-title {
+        .icon {
+          background-color: $color-primary !important;
+          svg path {
+            fill: $color-gray-1;
+          }
+        }
       }
     }
 
@@ -374,11 +388,28 @@
     min-height: 100vh;
     width: 100%;
     flex-shrink: 0;
-
     @media(min-width: $lg) {
       width: auto;
       flex-shrink: 1;
-      margin-left: 270px;
+      margin-left: 90px;
+    }
+
+    .ant-menu-title-content {
+      height: 35px !important;
+    }
+  }
+  .ant-menu-title-content {
+    height: 38px !important;
+  }
+
+  .has-sidebar {
+    .ant-layout {
+      @media(min-width: $lg) {
+        width: auto;
+        flex-shrink: 1;
+        margin-left: 270px !important;
+        transition: 1s;
+      }
     }
   }
 
@@ -401,7 +432,7 @@
     margin: 10px 4px;
     line-height: inherit;
     border-radius: 12px;
-    transition: .2s;
+    transition: 1s;
 
     @media(min-width: $md) {
       margin: 10px 20px;
@@ -422,6 +453,10 @@
         z-index: 10;
       }
     }
+  }
+
+  &.has-sidebar .ant-layout {
+    margin-left: 270px !important;
   }
 
   // Header Notification Dropdown

@@ -9,20 +9,28 @@
 
         <!-- Header Breadcrumbs & Title Column -->
         <a-col :span="24" :md="6">
+          <a-row>
+            <div style="width: 100%">
+              <MenuUnfoldOutlined class="btn-collapse" v-if="sidebarCollapsed" @click="$emit('collapseChange', !sidebarCollapsed)"/>
+              <MenuFoldOutlined class="btn-collapse" v-else @click="$emit('collapseChange', !sidebarCollapsed)"/>
 
-          <!-- Header Breadcrumbs -->
-          <a-breadcrumb>
-            <a-breadcrumb-item>
-              <router-link to="/"> Pages</router-link>
-            </a-breadcrumb-item>
-            <a-breadcrumb-item>{{ this.$route.name }}</a-breadcrumb-item>
-          </a-breadcrumb>
+              <!-- Header Breadcrumbs -->
+              <a-breadcrumb style="float: left">
+                <a-breadcrumb-item>
+                  <router-link to="/"> Pages</router-link>
+                </a-breadcrumb-item>
+                <a-breadcrumb-item>{{ this.$route.name }}</a-breadcrumb-item>
+              </a-breadcrumb>
+            </div>
+          </a-row>
           <!-- / Header Breadcrumbs -->
 
           <!-- Header Page Title -->
-          <div class="ant-page-header-heading">
-            <span class="ant-page-header-heading-title">{{ this.$route.name }}</span>
-          </div>
+          <a-row>
+            <div class="ant-page-header-heading">
+              <span class="ant-page-header-heading-title">{{ this.$route.name }}</span>
+            </div>
+          </a-row>
           <!-- / Header Page Title -->
 
         </a-col>
@@ -69,7 +77,7 @@
         </span>
             <template #overlay>
               <a-menu class="user-dropdown-menu-wrapper" @click="menuSelect">
-                <div v-if="$store.getters.authenticate">
+                <div v-if="$store.getters.authenticated">
                   <a-menu-item key="profile">
                     <a>
                       <UserOutlined/>
@@ -86,11 +94,16 @@
                     <span> {{ $t('account.logout') }}</span>
                   </a-menu-item>
                 </div>
+                <div v-else>
+                  <a-menu-item key="login">
+                    <LogoutOutlined/>
+                    <span> {{ $t('account.login') }}</span>
+                  </a-menu-item>
+                </div>
               </a-menu>
             </template>
           </a-dropdown>
           <!-- / Header Search Input -->
-
         </a-col>
         <!-- / Header Control Column -->
 
