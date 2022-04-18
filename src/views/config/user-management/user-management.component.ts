@@ -9,19 +9,16 @@ export default class JhiUserManagementComponent extends Vue {
   private userManagementService: UserManagementService
   private alertService: AlertService
 
-  public mounted (): void {
-    this.loadAll()
-  }
-
-  public loadAll (): void {
-    this.userManagementService
-      .retrieve({
-        page: 0,
-        size: 20
-      })
-      .then(res => {
-        console.log(res)
-      })
-      .catch((err: any) => this.alertService.showHttpError(err))
-  }
+  columns = [
+    {
+      title: 'Name',
+      dataIndex: 'firstName',
+      width: '20%'
+    },
+    {
+      title: 'Custom',
+      dataIndex: 'custom',
+      width: '20%'
+    }
+  ]
 }

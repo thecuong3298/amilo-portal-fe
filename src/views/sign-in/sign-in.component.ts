@@ -3,6 +3,8 @@ import UserService from '@/service/user.service'
 import { LoginModel } from '@/model/login.model'
 import { reactive } from 'vue'
 import AccountService from '@/service/account.service'
+import router from '@/router'
+import { RouteLocationRaw } from 'vue-router'
 
 @Options({
   inject: ['userService', 'accountService']
@@ -19,7 +21,15 @@ export default class SignInComponent extends Vue {
 
   onFinish () {
     this.userService.login(this.formState).then(() => {
-      this.accountService.retrieveAccount().then()
+      this.accountService.retrieveAccount().then(() => {
+        const requestedUrl = sessionStorage.getItem('requested-url')
+        if (requestedUrl) {
+          router.replace(requestedUrl as RouteLocationRaw).then()
+          sessionStorage.removeItem('requested-url')
+        } else {
+          this.$router.push('/').then()
+        }
+      })
     }).catch(error => {
       console.log(error)
     })

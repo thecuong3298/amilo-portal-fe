@@ -18,8 +18,8 @@ export default class UserManagementService {
     return axios.delete(`api/admin/users/${userId}`)
   }
 
-  public retrieve (req?: any): Promise<any> {
-    return axios.get('api/admin/users')
+  public retrieve (params?: any): Promise<any> {
+    return axios.get('api/admin/users', { params })
   }
 
   public retrieveAuthorities (): Promise<any> {

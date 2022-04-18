@@ -7,7 +7,7 @@ import { MENU } from '@/shared/config/menu.conf'
 @Options({
   components: {
     HomeOutlined,
-    'menu-sidebar': MenuSidebar as any
+    MenuSidebar
   },
   props: {
     sidebarCollapsed: {

@@ -2,7 +2,6 @@ import axios from 'axios'
 import { Store } from 'vuex'
 import TranslationService from '@/service/translation.service'
 import router from '@/router'
-import { RouteLocationRaw } from 'vue-router'
 
 export default class AccountService {
   constructor (private store: Store<any>, private translationService: TranslationService) {
@@ -40,18 +39,9 @@ export default class AccountService {
             if (this.store.getters.currentLanguage !== account.langKey) {
               this.store.dispatch('setLanguage', account.langKey).then()
             }
-            if (sessionStorage.getItem('requested-url')) {
-              router.replace(sessionStorage.getItem('requested-url') as RouteLocationRaw).then()
-              sessionStorage.removeItem('requested-url')
-            } else {
-              router.push('/')
-            }
           } else {
             this.store.commit('logout')
-            if (router.currentRoute.value.fullPath !== '/') {
-              router.push('/')
-            }
-            sessionStorage.removeItem('requested-url')
+            router.push({ name: 'Sign In' }).then()
           }
           this.translationService.setLocale(this.store.getters.currentLanguage)
           resolve(true)

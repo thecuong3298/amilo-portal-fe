@@ -1,6 +1,13 @@
 <template>
   <div>
-
+    <table-custom
+      :retrieveData="userManagementService.retrieve"
+      :columns="columns"
+    >
+      <template #cell="{column}">
+        <template v-if="column.dataIndex === 'custom'">sdfsdsaaaaaaa</template>
+      </template>
+    </table-custom>
   </div>
 </template>
 

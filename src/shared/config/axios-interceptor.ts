@@ -2,7 +2,6 @@ import axios from 'axios'
 
 const TIMEOUT = 1000000
 const onRequestSuccess = (config: any) => {
-  console.log(config)
   const token = localStorage.getItem('jhi-authenticationToken') || sessionStorage.getItem('jhi-authenticationToken')
   if (token) {
     if (!config.headers) {

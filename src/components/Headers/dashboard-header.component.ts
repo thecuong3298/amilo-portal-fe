@@ -67,7 +67,6 @@ export default class DashboardHeaderComponent extends Vue {
   created () {
     // Registering window resize event listener to fix affix elements size
     // error while resizing.
-    console.log(this.$store)
     window.addEventListener('resize', this.resizeEventHandler)
   }
 
@@ -84,7 +83,7 @@ export default class DashboardHeaderComponent extends Vue {
   menuSelect (event: any) {
     switch (event.key) {
       case 'logout':
-        this.logout().then()
+        this.logout().then(() => this.$router.push({ name: 'Sign In' }).then())
         break
       case 'login':
         this.$router.push({ name: 'Sign In' }).then()

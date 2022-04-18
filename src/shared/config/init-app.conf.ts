@@ -9,7 +9,7 @@ import AccountService from '@/service/account.service'
 import { setupAxiosInterceptors } from '@/shared/config/axios-interceptor'
 import router from '@/router'
 
-const app = createApp(App as any)
+const app = createApp(App)
 
 setupAxiosInterceptors(
   (error: any) => {
@@ -20,14 +20,13 @@ setupAxiosInterceptors(
       store.commit('logout')
       console.log('hu')
       if (!url.endsWith('api/authenticate')) {
+        sessionStorage.setItem('requested-url', router.currentRoute.value.fullPath)
         return router.push('/sign-in')
       }
     }
-    console.log('Unauthorized!')
     return Promise.reject(error)
   },
   (error: any) => {
-    console.log('Server error!')
     return Promise.reject(error)
   }
 )
