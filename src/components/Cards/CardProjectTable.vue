@@ -89,7 +89,7 @@ export default {
   data() {
     return {
       // Active button for the "Projects" table's card header radio button group.
-      projectHeaderBtns: "all",
+      projectHeaderBtns: 'all',
     };
   },
 };

@@ -1,10 +1,10 @@
-import axios from "axios";
+import axios from 'axios';
 
 const TIMEOUT = 1000000;
 const onRequestSuccess = (config: any) => {
   const token =
-    localStorage.getItem("jhi-authenticationToken") ||
-    sessionStorage.getItem("jhi-authenticationToken");
+    localStorage.getItem('jhi-authenticationToken') ||
+    sessionStorage.getItem('jhi-authenticationToken');
   if (token) {
     if (!config.headers) {
       config.headers = {};

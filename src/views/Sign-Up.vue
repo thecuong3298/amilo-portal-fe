@@ -9,7 +9,7 @@ export default {
   },
   beforeCreate() {
     // Creates the form and adds to it component's "form" property.
-    this.form = this.$form.createForm(this, { name: "normal_login" });
+    this.form = this.$form.createForm(this, { name: 'normal_login' });
   },
   methods: {
     // Handles input validation after submission.
@@ -17,7 +17,7 @@ export default {
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
-          console.log("Received values of form: ", values);
+          console.log('Received values of form: ', values);
         }
       });
     },

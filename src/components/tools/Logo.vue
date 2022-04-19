@@ -7,13 +7,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: "Logo",
+  name: 'Logo',
   title: {
     type: String,
-    default: "Ant Design Pro",
+    default: 'Ant Design Pro',
     required: false,
   },
   showTitle: {

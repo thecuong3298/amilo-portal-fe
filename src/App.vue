@@ -1,23 +1,22 @@
 <template>
   <div id="app">
-    <component :is="layout">
+    <layout-dashboard v-if="useLayout">
       <router-view />
-    </component>
+    </layout-dashboard>
+    <router-view v-else />
   </div>
 </template>
 
 <script>
-import DefaultLayout from "./layouts/Default.vue";
-import DashboardLayout from "./layouts/Dashboard.vue";
+import DashboardLayout from './layouts/dashboard.vue';
 
 export default {
   components: {
-    "layout-default": DefaultLayout,
-    "layout-dashboard": DashboardLayout,
+    'layout-dashboard': DashboardLayout,
   },
   computed: {
-    layout() {
-      return "layout-" + (this.$route.meta.layout || "default").toLowerCase();
+    useLayout() {
+      return this.$route.meta.layout;
     },
   },
 };

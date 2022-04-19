@@ -19,7 +19,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     value: {
       type: Number,
@@ -27,19 +27,19 @@ export default {
     },
     prefix: {
       type: String,
-      default: "",
+      default: '',
     },
     suffix: {
       type: String,
-      default: "",
+      default: '',
     },
     icon: {
       type: String,
-      default: "",
+      default: '',
     },
     status: {
       type: String,
-      default: "success",
+      default: 'success',
     },
   },
   data() {

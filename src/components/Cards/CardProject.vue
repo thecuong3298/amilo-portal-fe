@@ -35,15 +35,15 @@ export default {
     },
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     content: {
       type: String,
-      default: "",
+      default: '',
     },
     cover: {
       type: String,
-      default: "",
+      default: '',
     },
     team: {
       type: Array,

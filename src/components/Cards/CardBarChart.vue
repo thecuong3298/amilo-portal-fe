@@ -36,7 +36,7 @@
 
 <script>
 // Bar chart for "Active Users" card.
-import ChartBar from "../Charts/ChartBar";
+import ChartBar from '../Charts/ChartBar';
 
 export default {
   components: {
@@ -46,11 +46,11 @@ export default {
     return {
       // Data for bar chart.
       barChartData: {
-        labels: ["01", "02", "03", "04", "05", "06", "07", "08", "09"],
+        labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09'],
         datasets: [
           {
-            label: "Sales",
-            backgroundColor: "#fff",
+            label: 'Sales',
+            backgroundColor: '#fff',
             borderWidth: 0,
             borderSkipped: false,
             borderRadius: 6,

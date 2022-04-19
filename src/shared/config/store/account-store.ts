@@ -1,4 +1,4 @@
-import { Module } from "vuex";
+import { Module } from 'vuex';
 
 export interface AccountStateStorable {
   logon: boolean;
@@ -12,8 +12,8 @@ export const defaultAccountState: AccountStateStorable = {
   logon: false,
   userIdentity: null,
   authenticated: false,
-  ribbonOnProfiles: "",
-  activeProfiles: "",
+  ribbonOnProfiles: '',
+  activeProfiles: '',
 };
 
 export const accountStore: Module<AccountStateStorable, any> = {

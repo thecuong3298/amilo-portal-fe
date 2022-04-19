@@ -21,19 +21,19 @@ export default {
     },
     prefix: {
       type: String,
-      default: "+$",
+      default: '+$',
     },
     icon: {
       type: String,
-      default: "",
+      default: '',
     },
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     content: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   data() {

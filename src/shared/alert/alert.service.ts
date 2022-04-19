@@ -1,5 +1,5 @@
-import { notification } from "ant-design-vue";
-import { translate } from "@/shared/config/useI18n";
+import { notification } from 'ant-design-vue';
+import { translate } from '@/shared/config/useI18n';
 
 export default class AlertService {
   public showError(title: string, message?: any) {
@@ -14,7 +14,7 @@ export default class AlertService {
     console.log(httpErrorResponse);
     switch (httpErrorResponse.status) {
       case 0:
-        this.showError("error.server.not.reachable");
+        this.showError('error.server.not.reachable');
         break;
 
       case 400: {
@@ -22,9 +22,9 @@ export default class AlertService {
         let errorHeader: string | null = null;
         let entityKey: string | null = null;
         for (const entry of arr) {
-          if (entry.toLowerCase().endsWith("app-error")) {
+          if (entry.toLowerCase().endsWith('app-error')) {
             errorHeader = httpErrorResponse.headers[entry];
-          } else if (entry.toLowerCase().endsWith("app-params")) {
+          } else if (entry.toLowerCase().endsWith('app-params')) {
             entityKey = httpErrorResponse.headers[entry];
           }
         }
@@ -34,7 +34,7 @@ export default class AlertService {
             : undefined;
           this.showError(errorHeader, alertData);
         } else if (
-          httpErrorResponse.data !== "" &&
+          httpErrorResponse.data !== '' &&
           httpErrorResponse.data.fieldErrors
         ) {
           this.showError(httpErrorResponse.data.message);
@@ -45,7 +45,7 @@ export default class AlertService {
       }
 
       case 404:
-        this.showError("error.http.404");
+        this.showError('error.http.404');
         break;
 
       default:

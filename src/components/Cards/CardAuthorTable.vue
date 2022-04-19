@@ -45,7 +45,7 @@
           class="tag-status"
           :class="status ? 'ant-tag-primary' : 'ant-tag-muted'"
         >
-          {{ status ? "ONLINE" : "OFFLINE" }}
+          {{ status ? 'ONLINE' : 'OFFLINE' }}
         </a-tag>
       </template>
 
@@ -74,7 +74,7 @@ export default {
   data() {
     return {
       // Active button for the "Authors" table's card header radio button group.
-      authorsHeaderBtns: "all",
+      authorsHeaderBtns: 'all',
     };
   },
 };

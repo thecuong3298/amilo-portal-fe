@@ -1,12 +1,12 @@
-import AlertService from "@/shared/alert/alert.service";
-import { Options, Vue } from "vue-class-component";
-import { PaginationModel } from "@/model/pagination.model";
-import { PropType } from "vue";
-import { retrievePaginationFunction } from "@/type/retrievePagination.type";
-import { TableColumnsType } from "ant-design-vue";
+import AlertService from '@/shared/alert/alert.service';
+import { Options, Vue } from 'vue-class-component';
+import { PaginationModel } from '@/model/pagination.model';
+import { PropType } from 'vue';
+import { retrievePaginationFunction } from '@/type/retrievePagination.type';
+import { TableColumnsType } from 'ant-design-vue';
 
 @Options({
-  inject: ["alertService"],
+  inject: ['alertService'],
   props: {
     retrieveData: {
       type: Function,
@@ -53,7 +53,7 @@ export default class TableComponent extends Vue {
     })
       .then((res: any) => {
         this.data = res.data;
-        this.pagination.total = Number(res.headers["x-total-count"]);
+        this.pagination.total = Number(res.headers['x-total-count']);
       })
       .catch((err: any) => this.alertService.showHttpError(err))
       .finally(() => {

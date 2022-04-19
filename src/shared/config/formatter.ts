@@ -1,6 +1,6 @@
 function warn(msg: string, err?: Error) {
-  if (typeof console !== "undefined") {
-    console.warn("[vue-i18n] " + msg);
+  if (typeof console !== 'undefined') {
+    console.warn('[vue-i18n] ' + msg);
     if (err) {
       console.warn(err.stack);
     }
@@ -8,11 +8,11 @@ function warn(msg: string, err?: Error) {
 }
 
 function isObject(obj: any): boolean {
-  return obj !== null && typeof obj === "object";
+  return obj !== null && typeof obj === 'object';
 }
 
 type Token = {
-  type: "text" | "named" | "list" | "unknown";
+  type: 'text' | 'named' | 'list' | 'unknown';
   value: string;
 };
 
@@ -38,8 +38,8 @@ export default class JhiFormatter {
     // this is custom jhipster logic such that we can reuse the i18n json files for vue-i18n
     // replace '{{' with '{' and '{{ ' with '{' and same for '}}'
     message = message
-      .replace(this.leftBraces, "{")
-      .replace(this.rightBraces, "}");
+      .replace(this.leftBraces, '{')
+      .replace(this.rightBraces, '}');
 
     let tokens: Array<Token> = this.caches[message];
     if (!tokens) {
@@ -55,30 +55,30 @@ function parse(format: string): Token[] {
   const tokens = [];
   let position = 0;
 
-  let text = "";
+  let text = '';
   while (position < format.length) {
     let char = format[position++];
-    if (char === "{") {
+    if (char === '{') {
       if (text) {
-        tokens.push({ type: "text", value: text });
+        tokens.push({ type: 'text', value: text });
       }
 
-      text = "";
-      let sub = "";
+      text = '';
+      let sub = '';
       char = format[position++];
-      while (char !== undefined && char !== "}") {
+      while (char !== undefined && char !== '}') {
         sub += char;
         char = format[position++];
       }
-      const isClosed = char === "}";
+      const isClosed = char === '}';
 
       const namedOrUnknown =
-        isClosed && RE_TOKEN_NAMED_VALUE.test(sub) ? "named" : "unknown";
-      const _type = RE_TOKEN_LIST_VALUE.test(sub) ? "list" : namedOrUnknown;
+        isClosed && RE_TOKEN_NAMED_VALUE.test(sub) ? 'named' : 'unknown';
+      const _type = RE_TOKEN_LIST_VALUE.test(sub) ? 'list' : namedOrUnknown;
       tokens.push({ value: sub, type: _type });
-    } else if (char === "%") {
+    } else if (char === '%') {
       // when found rails i18n syntax, skip text capture
-      if (format[position] !== "{") {
+      if (format[position] !== '{') {
         text += char;
       }
     } else {
@@ -87,7 +87,7 @@ function parse(format: string): Token[] {
   }
 
   if (text) {
-    tokens.push({ type: "text", value: text });
+    tokens.push({ type: 'text', value: text });
   }
 
   // @ts-ignore
@@ -98,26 +98,26 @@ function compile(tokens: Array<Token>, values: any) {
   const compiled: Array<any> = [];
   let index = 0;
 
-  const namedOrUnknown = isObject(values) ? "named" : "unknown";
-  const mode: string = Array.isArray(values) ? "list" : namedOrUnknown;
-  if (mode === "unknown") {
+  const namedOrUnknown = isObject(values) ? 'named' : 'unknown';
+  const mode: string = Array.isArray(values) ? 'list' : namedOrUnknown;
+  if (mode === 'unknown') {
     return compiled;
   }
 
   while (index < tokens.length) {
     const token = tokens[index];
     switch (token.type) {
-      case "text":
+      case 'text':
         compiled.push(token.value);
         break;
-      case "list":
+      case 'list':
         compiled.push(values[parseInt(token.value, 10)]);
         break;
-      case "named":
-        if (mode === "named") {
+      case 'named':
+        if (mode === 'named') {
           compiled.push(values[token.value]);
         } else {
-          if (process.env.NODE_ENV !== "production") {
+          if (process.env.NODE_ENV !== 'production') {
             warn(
               "Type of token '" +
                 token.type +
@@ -128,8 +128,8 @@ function compile(tokens: Array<Token>, values: any) {
           }
         }
         break;
-      case "unknown":
-        if (process.env.NODE_ENV !== "production") {
+      case 'unknown':
+        if (process.env.NODE_ENV !== 'production') {
           warn("Detect 'unknown' type of token!");
         }
         break;

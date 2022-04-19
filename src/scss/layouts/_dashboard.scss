@@ -25,7 +25,7 @@
 
   // Primary Sidebar
   .ant-layout-sider.sider-primary {
-    width: 270px;
+    width: 250px;
     position: fixed;
     left: 0;
     z-index: 99;
@@ -36,8 +36,8 @@
     background: #ffffff !important;
 
     @media(min-width: $lg) {
-      margin: 0;
-      padding: 0;
+      margin: 20px 0 0 20px;
+      padding: 13px 20px;
       height: calc(100vh - 20px);
       background: transparent !important;
     }
@@ -54,8 +54,8 @@
       padding: 33px 0px;
 
       @media(min-width: $lg) {
-        padding: 0 0;
-        margin: 0 0 0 0;
+        padding: 13px 0;
+        margin: 20px 0 0 0;
       }
     }
 
@@ -69,14 +69,13 @@
     .brand {
       font-weight: $fw-semibold;
       padding: $submenu-links-p;
-      color: $color-dark;
 
       span {
         vertical-align: middle;
       }
 
       img {
-        height: 30px;
+        width: 53.4px;
       }
     }
 
@@ -99,7 +98,7 @@
       border-radius: 0px;
 
       @media(min-width: $lg) {
-        margin: 10px 0 64px 10px;
+        margin: 20px 0 64px 20px;
         padding-top: 13px;
         border-radius: 8px;
       }
@@ -107,30 +106,25 @@
 
     .ant-menu-inline {
       border: none;
-      width: calc(100% - 3px);
 
       .ant-menu-item,
+      .ant-menu-submenu {
+        margin: 0;
+        overflow: visible;
+
+        &::after {
+          display: none;
+        }
+      }
+
       .ant-menu-submenu-title {
         overflow: visible;
       }
     }
 
-    .ant-menu-submenu-selected {
-      background-color: transparent;
-
-      .ant-menu-submenu-title {
-        .icon {
-          background-color: $color-primary !important;
-          svg path {
-            fill: $color-gray-1;
-          }
-        }
-      }
-    }
-
     .ant-menu-item,
     .ant-menu-submenu {
-      //padding: 0 !important;
+      padding: 0 !important;
       height: auto;
       line-height: normal;
 
@@ -169,12 +163,13 @@
         vertical-align: middle;
       }
 
+      &.ant-menu-item-selected .router-link-active,
       .router-link-active {
         background-color: $color-gray-1;
         box-shadow: $shadow-1;
 
         .icon {
-          background-color: $color-primary !important;
+          background-color: $color-primary;
         }
 
         svg path {
@@ -187,38 +182,91 @@
       }
 
       a:hover {
-        color: $color-primary;
-        font-weight: bold;
+        color: $color-gray-12;
 
         .icon {
           transition: box-shadow 0.1s ease-in;
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
         }
       }
+
+      &.menu-item-header {
+        padding: 10px 16px !important;
+        color: $color-gray-7;
+        font-weight: $fw-bold;
+        font-size: 13px;
+        text-transform: uppercase;
+      }
     }
 
-    &.ant-layout-sider {
-      .ant-menu-item-selected {
-        background-color: transparent;
-        box-shadow: none;
-
+    &.ant-layout-sider-white {
+      .ant-menu-item {
         .icon {
-          background-color: $color-primary !important;
+          background-color: $color-gray-2;
         }
 
-        svg path {
-          fill: $color-gray-1;
+        &.ant-menu-item-selected .router-link-active,
+        .router-link-active {
+          background-color: transparent;
+          box-shadow: none;
+
+          .icon {
+            background-color: $color-primary;
+          }
+
+          svg path {
+            fill: $color-gray-1;
+          }
         }
       }
     }
 
-    .router-link-active {
-      background-color: transparent;
-      box-shadow: none;
-      color: $color-primary !important;
+    &.ant-layout-sider-dark {
+      margin: 0;
+      padding-top: 33px;
+      border-radius: 0px;
 
-      .anticon {
-        background-color: $color-primary !important;
+      @media(min-width: $lg) {
+        margin: 20px 0 0 20px;
+        padding-top: 13px;
+        border-radius: 8px;
+      }
+
+      .ant-menu-item {
+        a {
+          padding: 10px 10px;
+          border-radius: 6px;
+          margin: 7px 0;
+        }
+
+        .icon {
+          background-color: transparent;
+          height: auto
+        }
+
+        .label {
+          color: $color-gray-1;
+        }
+
+        &.ant-menu-item-selected .router-link-active,
+        .router-link-active {
+          background-color: $color-primary;
+          box-shadow: none;
+
+          .icon {
+            background-color: transparent;
+            box-shadow: none;
+          }
+
+          svg path {
+            fill: $color-gray-1;
+          }
+        }
+
+        &.menu-item-header {
+          color: $color-gray-1;
+          opacity: .7;
+        }
       }
     }
 
@@ -298,7 +346,7 @@
       box-shadow: none;
     }
 
-    &.ant-layout-sider-primary {
+    &.ant-layout-sider-primary .footer-box {
       background-color: $color-primary;
       color: $color-gray-1;
       box-shadow: none;
@@ -388,28 +436,11 @@
     min-height: 100vh;
     width: 100%;
     flex-shrink: 0;
+
     @media(min-width: $lg) {
       width: auto;
       flex-shrink: 1;
-      margin-left: 90px;
-    }
-
-    .ant-menu-title-content {
-      height: 35px !important;
-    }
-  }
-  .ant-menu-title-content {
-    height: 38px !important;
-  }
-
-  .has-sidebar {
-    .ant-layout {
-      @media(min-width: $lg) {
-        width: auto;
-        flex-shrink: 1;
-        margin-left: 270px !important;
-        transition: 1s;
-      }
+      margin-left: 270px;
     }
   }
 
@@ -426,17 +457,10 @@
 
   // Page Header
   .ant-layout-header {
-    background: transparent;
+    background: white;
     height: auto;
     padding: 16px;
-    margin: 10px 4px;
     line-height: inherit;
-    border-radius: 12px;
-    transition: 1s;
-
-    @media(min-width: $md) {
-      margin: 10px 20px;
-    }
 
   }
 
@@ -453,10 +477,6 @@
         z-index: 10;
       }
     }
-  }
-
-  &.has-sidebar .ant-layout {
-    margin-left: 270px !important;
   }
 
   // Header Notification Dropdown
@@ -561,6 +581,49 @@
     }
   }
 
+  .brand-input-search {
+    width: 370px;
+    .header-search {
+      width: 293px;
+      margin: 0 7px 0 0;
+
+      @media(min-width: $md) {
+        margin: 0 7px;
+      }
+
+      svg {
+        path {
+          fill: $color-gray-7;
+        }
+      }
+
+      .ant-input {
+        font-weight: $fw-semibold;
+        color: $color-gray-7;
+
+        &:not(:first-child) {
+          padding-left: 32px;
+        }
+
+        &:not(:last-child) {
+          padding-right: 11px;
+        }
+      }
+
+      &.loading .ant-input:not(:last-child) {
+        padding-right: 30px;
+      }
+
+      .ant-input-suffix .ant-input-search-icon {
+        display: none;
+
+        &.anticon-loading {
+          display: block;
+        }
+      }
+    }
+  }
+
   // / Breadcrumbs
   .header-control {
     display: flex;
@@ -612,46 +675,6 @@
 
       path {
         fill: $color-gray-12;
-      }
-    }
-
-    .header-search {
-      width: 200px;
-      margin: 0 7px 0 0;
-
-      @media(min-width: $md) {
-        margin: 0 7px;
-      }
-
-      svg {
-        path {
-          fill: $color-gray-7;
-        }
-      }
-
-      .ant-input {
-        font-weight: $fw-semibold;
-        color: $color-gray-7;
-
-        &:not(:first-child) {
-          padding-left: 32px;
-        }
-
-        &:not(:last-child) {
-          padding-right: 11px;
-        }
-      }
-
-      &.loading .ant-input:not(:last-child) {
-        padding-right: 30px;
-      }
-
-      .ant-input-suffix .ant-input-search-icon {
-        display: none;
-
-        &.anticon-loading {
-          display: block;
-        }
       }
     }
 

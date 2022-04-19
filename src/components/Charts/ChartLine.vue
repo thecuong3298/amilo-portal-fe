@@ -5,22 +5,22 @@
 </template>
 
 <script>
-import { Chart, registerables } from "chart.js";
+import { Chart, registerables } from 'chart.js';
 
 Chart.register(...registerables);
 
 export default {
-  props: ["data", "height"],
+  props: ['data', 'height'],
   data() {
     return {
       chart: null,
     };
   },
   mounted() {
-    const ctx = this.$refs.chart.getContext("2d");
+    const ctx = this.$refs.chart.getContext('2d');
 
     this.chart = new Chart(ctx, {
-      type: "line",
+      type: 'line',
       data: this.data,
       options: {
         layout: {
@@ -40,15 +40,15 @@ export default {
         },
         tooltips: {
           enabled: true,
-          mode: "index",
+          mode: 'index',
           intersect: false,
         },
         scales: {
           y: {
             grid: {
               display: true,
-              color: "rgba(0, 0, 0, .2)",
-              zeroLineColor: "#000000",
+              color: 'rgba(0, 0, 0, .2)',
+              zeroLineColor: '#000000',
               borderDash: [6],
               borderDashOffset: [6],
             },
@@ -56,12 +56,12 @@ export default {
               suggestedMin: 0,
               suggestedMax: 1000,
               display: true,
-              color: "#8C8C8C",
+              color: '#8C8C8C',
               font: {
                 size: 14,
                 lineHeight: 1.8,
-                weight: "600",
-                family: "Open Sans",
+                weight: '600',
+                family: 'Open Sans',
               },
             },
           },
@@ -71,12 +71,12 @@ export default {
             },
             ticks: {
               display: true,
-              color: "#8C8C8C",
+              color: '#8C8C8C',
               font: {
                 size: 14,
                 lineHeight: 1.5,
-                weight: "600",
-                family: "Open Sans",
+                weight: '600',
+                family: 'Open Sans',
               },
             },
           },

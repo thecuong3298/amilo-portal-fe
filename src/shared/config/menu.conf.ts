@@ -1,39 +1,39 @@
-import { MenuModel } from "@/model/menu.model";
+import { MenuModel } from '@/model/menu.model';
 
 export const MENU: MenuModel[] = [
   {
-    path: "/dashboard",
+    path: '/dashboard',
     meta: {
-      title: "menu.dashboard",
-      icon: "SettingOutlined",
+      title: 'menu.dashboard',
+      icon: 'SettingOutlined',
     },
   },
   {
-    path: "/user",
+    path: '/user',
     component: {
-      key: "user-management",
+      key: 'user-management',
     },
     meta: {
-      title: "menu.setting",
-      icon: "SettingOutlined",
+      title: 'menu.setting',
+      icon: 'SettingOutlined',
     },
     children: [
       {
-        path: "/user-management",
+        path: '/user-management',
         component: {
-          key: "user",
-          parentKey: "user-management",
+          key: 'user',
+          parentKey: 'user-management',
         },
         meta: {
-          title: "menu.user-management",
-          icon: "UserOutlined",
+          title: 'menu.user-management',
+          icon: 'UserOutlined',
         },
       },
       {
-        path: "/role-management",
+        path: '/role-management',
         meta: {
-          title: "menu.role-management",
-          icon: "ControlOutlined",
+          title: 'menu.role-management',
+          icon: 'ControlOutlined',
         },
       },
     ],
