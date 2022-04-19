@@ -1,27 +1,24 @@
 <template>
-
   <div></div>
 </template>
 
 <script>
-
-export default ({
+export default {
   props: {
     data: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     columns: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
-  data () {
+  data() {
     return {
       // Active button for the "Projects" table's card header radio button group.
-      projectHeaderBtns: 'all'
-    }
-  }
-})
-
+      projectHeaderBtns: "all",
+    };
+  },
+};
 </script>

@@ -1,32 +1,28 @@
 <template>
-  <div>
-  </div>
+  <div></div>
 </template>
 
 <script>
-
-export default ({
-  data () {
-    return {}
+export default {
+  data() {
+    return {};
   },
-  beforeCreate () {
+  beforeCreate() {
     // Creates the form and adds to it component's "form" property.
-    this.form = this.$form.createForm(this, { name: 'normal_login' })
+    this.form = this.$form.createForm(this, { name: "normal_login" });
   },
   methods: {
     // Handles input validation after submission.
-    handleSubmit (e) {
-      e.preventDefault()
+    handleSubmit(e) {
+      e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
-          console.log('Received values of form: ', values)
+          console.log("Received values of form: ", values);
         }
-      })
-    }
-  }
-})
-
+      });
+    },
+  },
+};
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

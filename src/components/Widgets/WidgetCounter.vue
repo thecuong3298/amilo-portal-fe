@@ -1,5 +1,4 @@
 <template>
-
   <a-card :bordered="false" class="widget-1">
     <a-statistic
       :title="title"
@@ -13,41 +12,38 @@
     </a-statistic>
     <div class="icon" v-html="icon"></div>
   </a-card>
-
 </template>
 
 <script>
-
-export default ({
+export default {
   props: {
     title: {
       type: String,
-      default: ''
+      default: "",
     },
     value: {
       type: Number,
-      default: 0
+      default: 0,
     },
     prefix: {
       type: String,
-      default: ''
+      default: "",
     },
     suffix: {
       type: String,
-      default: ''
+      default: "",
     },
     icon: {
       type: String,
-      default: ''
+      default: "",
     },
     status: {
       type: String,
-      default: 'success'
-    }
+      default: "success",
+    },
   },
-  data () {
-    return {}
-  }
-})
-
+  data() {
+    return {};
+  },
+};
 </script>

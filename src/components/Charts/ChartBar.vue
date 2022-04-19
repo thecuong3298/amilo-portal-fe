@@ -1,28 +1,25 @@
 <template>
   <div>
-    <canvas ref="chart" :style="{'height': height + 'px'}"></canvas>
+    <canvas ref="chart" :style="{ height: height + 'px' }"></canvas>
   </div>
 </template>
 
 <script>
-import { Chart, registerables } from 'chart.js'
+import { Chart, registerables } from "chart.js";
 
-Chart.register(...registerables)
+Chart.register(...registerables);
 
-export default ({
-  props: [
-    'data',
-    'height'
-  ],
-  data () {
+export default {
+  props: ["data", "height"],
+  data() {
     return {
-      chart: null
-    }
+      chart: null,
+    };
   },
-  mounted () {
-    const ctx = this.$refs.chart.getContext('2d')
+  mounted() {
+    const ctx = this.$refs.chart.getContext("2d");
     this.chart = new Chart(ctx, {
-      type: 'bar',
+      type: "bar",
       data: this.data,
       options: {
         layout: {
@@ -30,73 +27,72 @@ export default ({
             top: 30,
             right: 15,
             left: 10,
-            bottom: 5
-          }
+            bottom: 5,
+          },
         },
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
           legend: {
-            display: false
-          }
+            display: false,
+          },
         },
         tooltips: {
           enabled: true,
-          mode: 'index',
-          intersect: false
+          mode: "index",
+          intersect: false,
         },
         scales: {
           y: {
             grid: {
               display: true,
-              color: 'rgba(255, 255, 255, .2)',
-              zeroLineColor: '#ffffff',
+              color: "rgba(255, 255, 255, .2)",
+              zeroLineColor: "#ffffff",
               borderDash: [6],
-              borderDashOffset: [6]
+              borderDashOffset: [6],
             },
             ticks: {
               suggestedMin: 0,
               suggestedMax: 1000,
               display: true,
-              color: '#fff',
+              color: "#fff",
               font: {
                 size: 14,
                 lineHeight: 1.5,
-                weight: '600',
-                family: 'Open Sans'
-              }
-            }
+                weight: "600",
+                family: "Open Sans",
+              },
+            },
           },
           x: {
             grid: {
-              display: false
+              display: false,
             },
             ticks: {
               display: true,
-              color: '#fff',
+              color: "#fff",
               font: {
                 size: 14,
                 lineHeight: 1.5,
-                weight: '600',
-                family: 'Open Sans'
-              }
-            }
-          }
-        }
-      }
-    })
+                weight: "600",
+                family: "Open Sans",
+              },
+            },
+          },
+        },
+      },
+    });
   },
   // Right before the component is destroyed,
   // also destroy the chart.
   beforeDestroy: function () {
-    this.chart.destroy()
-  }
-})
-
+    this.chart.destroy();
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 canvas {
-  background-image: linear-gradient(to right, #00369E, #005CFD, #A18DFF);
+  background-image: linear-gradient(to right, #00369e, #005cfd, #a18dff);
 }
 </style>

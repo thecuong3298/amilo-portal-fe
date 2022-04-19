@@ -3,4 +3,6 @@ interface ParamsPagination {
   size: number;
 }
 
-export declare type retrievePaginationFunction = (params: ParamsPagination) => Promise<any>
+export declare type retrievePaginationFunction = (
+  params: ParamsPagination
+) => Promise<any>;

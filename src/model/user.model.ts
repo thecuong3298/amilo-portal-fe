@@ -16,7 +16,7 @@ export interface IUser {
 
 export class User implements IUser {
   // eslint-disable-next-line no-useless-constructor
-  constructor (
+  constructor(
     public id?: any,
     public login?: string,
     public firstName?: string,

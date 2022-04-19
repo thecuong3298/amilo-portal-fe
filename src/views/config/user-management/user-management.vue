@@ -4,7 +4,7 @@
       :retrieveData="userManagementService.retrieve"
       :columns="columns"
     >
-      <template #cell="{column}">
+      <template #cell="{ column }">
         <template v-if="column.dataIndex === 'custom'">sdfsdsaaaaaaa</template>
       </template>
     </table-custom>

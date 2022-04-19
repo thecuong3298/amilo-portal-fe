@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <!-- Default Layout -->
@@ -9,7 +8,7 @@
 
       <!-- Page Content -->
       <a-layout-content>
-        <router-view/>
+        <router-view />
       </a-layout-content>
       <!-- / Page Content -->
 
@@ -21,22 +20,22 @@
 </template>
 
 <script>
-import DefaultHeader from '../components/Headers/DefaultHeader'
-import DefaultFooter from '../components/Footers/DefaultFooter'
+import DefaultHeader from "../components/Headers/DefaultHeader";
+import DefaultFooter from "../components/Footers/DefaultFooter";
 
 export default {
   components: {
     DefaultHeader,
-    DefaultFooter
+    DefaultFooter,
   },
-  data () {
-    return {}
+  data() {
+    return {};
   },
   computed: {
     // Sets layout's element's class based on route's meta data.
-    layoutClass () {
-      return this.$route.meta.layoutClass
-    }
-  }
-}
+    layoutClass() {
+      return this.$route.meta.layoutClass;
+    },
+  },
+};
 </script>

@@ -1,5 +1,4 @@
 <template>
-
   <!-- Salary Card -->
   <a-card :bordered="false" class="widget-2 h-full">
     <a-statistic :value="value" :prefix="prefix">
@@ -11,37 +10,34 @@
     </a-statistic>
   </a-card>
   <!-- / Salary Card -->
-
 </template>
 
 <script>
-
-export default ({
+export default {
   props: {
     value: {
       type: Number,
-      default: 0
+      default: 0,
     },
     prefix: {
       type: String,
-      default: '+$'
+      default: "+$",
     },
     icon: {
       type: String,
-      default: ''
+      default: "",
     },
     title: {
       type: String,
-      default: ''
+      default: "",
     },
     content: {
       type: String,
-      default: ''
-    }
+      default: "",
+    },
   },
-  data () {
-    return {}
-  }
-})
-
+  data() {
+    return {};
+  },
+};
 </script>

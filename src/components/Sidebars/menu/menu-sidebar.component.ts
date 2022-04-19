@@ -1,30 +1,34 @@
-import { Options, Vue } from 'vue-class-component'
-import { MenuModel } from '@/model/menu.model'
-import { PropType } from 'vue'
-import { SettingOutlined, UserOutlined, ControlOutlined } from '@ant-design/icons-vue'
+import { Options, Vue } from "vue-class-component";
+import { MenuModel } from "@/model/menu.model";
+import { PropType } from "vue";
+import {
+  SettingOutlined,
+  UserOutlined,
+  ControlOutlined,
+} from "@ant-design/icons-vue";
 
 @Options({
-  name: 'MenuSidebar',
+  name: "MenuSidebar",
   components: {
     SettingOutlined,
     UserOutlined,
-    ControlOutlined
+    ControlOutlined,
   },
   props: {
     menu: {
       type: Object as PropType<MenuModel>,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 export default class MenuSidebarComponent extends Vue {
-  menu: MenuModel
+  menu: MenuModel;
 
-  get hasChild () {
-    return this.menu?.children?.length
+  get hasChild() {
+    return this.menu?.children?.length;
   }
 
-  logMen () {
-    console.log(this.menu)
+  logMen() {
+    console.log(this.menu);
   }
 }
