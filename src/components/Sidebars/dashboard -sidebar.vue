@@ -7,7 +7,6 @@
     collapsed-width="0"
     width="250px"
     :collapsed="sidebarCollapsed"
-    @collapse="$emit('toggleSidebar', !sidebarCollapsed)"
     :trigger="null"
     :class="[
       'ant-layout-sider-' + sidebarColor,
@@ -15,6 +14,7 @@
     ]"
     theme="light"
     :style="{ backgroundColor: 'transparent' }"
+    @collapse="$emit('toggleSidebar', !sidebarCollapsed)"
   >
     <!--    <hr />-->
     <!-- Sidebar Navigation Menu -->
@@ -43,7 +43,7 @@
           <span class="label">RTL</span>
         </router-link>
       </a-menu-item>
-      <a-menu-item class="menu-item-header"> Account Pages </a-menu-item>
+      <a-menu-item class="menu-item-header">Account Pages</a-menu-item>
       <a-menu-item>
         <router-link to="/profile">
           <a-icon type="home" class="icon" />

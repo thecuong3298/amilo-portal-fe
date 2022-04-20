@@ -3,13 +3,13 @@
   <a-card
     :bordered="false"
     class="header-solid h-full"
-    :bodyStyle="{ paddingTop: 0, paddingBottom: '16px' }"
+    :body-style="{ paddingTop: 0, paddingBottom: '16px' }"
   >
     <template #title>
       <h6 class="font-semibold m-0">Invoices</h6>
     </template>
-    <template slot="extra">
-      <a-button type="primary"> VIEW ALL </a-button>
+    <template #extra>
+      <a-button type="primary">VIEW ALL</a-button>
     </template>
     <a-list
       class="invoice-list"

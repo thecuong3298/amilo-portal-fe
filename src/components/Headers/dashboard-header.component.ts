@@ -29,7 +29,7 @@ const notificationsData = [
   },
 ];
 
-@Options({
+@Options<DashboardHeaderComponent>({
   props: {
     // Header fixed status.
     navbarFixed: {

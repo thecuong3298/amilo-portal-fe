@@ -3,7 +3,6 @@
 // Template's dashboard layout styles.
 //
 
-
 // Dashboard Layout
 .layout-dashboard {
   background: transparent;
@@ -11,7 +10,7 @@
   position: relative;
   overflow-x: hidden;
 
-  @media(min-width: $lg) {
+  @media (min-width: $lg) {
     overflow: auto;
   }
 
@@ -35,7 +34,7 @@
     padding: 33px 20px;
     background: #ffffff !important;
 
-    @media(min-width: $lg) {
+    @media (min-width: $lg) {
       margin: 20px 0 0 20px;
       padding: 13px 20px;
       height: calc(100vh - 20px);
@@ -53,7 +52,7 @@
       margin: 0;
       padding: 33px 0px;
 
-      @media(min-width: $lg) {
+      @media (min-width: $lg) {
         padding: 13px 0;
         margin: 20px 0 0 0;
       }
@@ -61,7 +60,7 @@
 
     .ant-layout-sider-children {
       width: 210px;
-      @media(min-width: $lg) {
+      @media (min-width: $lg) {
         width: auto;
       }
     }
@@ -97,7 +96,7 @@
       padding-top: 33px;
       border-radius: 0px;
 
-      @media(min-width: $lg) {
+      @media (min-width: $lg) {
         margin: 20px 0 64px 20px;
         padding-top: 13px;
         border-radius: 8px;
@@ -226,7 +225,7 @@
       padding-top: 33px;
       border-radius: 0px;
 
-      @media(min-width: $lg) {
+      @media (min-width: $lg) {
         margin: 20px 0 0 20px;
         padding-top: 13px;
         border-radius: 8px;
@@ -241,7 +240,7 @@
 
         .icon {
           background-color: transparent;
-          height: auto
+          height: auto;
         }
 
         .label {
@@ -265,19 +264,19 @@
 
         &.menu-item-header {
           color: $color-gray-1;
-          opacity: .7;
+          opacity: 0.7;
         }
       }
     }
 
     $sidebar-colors: (
-            "primary": $color-primary,
-            "secondary": $color-secondary,
-            "success": $color-success,
-            "warning": $color-warning,
-            "danger": $color-danger,
-            "black": $color-dark,
-    ) ;
+      'primary': $color-primary,
+      'secondary': $color-secondary,
+      'success': $color-success,
+      'warning': $color-warning,
+      'danger': $color-danger,
+      'black': $color-dark,
+    );
     @each $name, $color in $sidebar-colors {
       &.ant-layout-sider-#{$name} .ant-menu-item {
         &.ant-menu-item-selected .router-link-active,
@@ -294,7 +293,7 @@
       padding-top: 100px;
       padding-bottom: 33px;
 
-      @media(min-width: $lg) {
+      @media (min-width: $lg) {
         padding-bottom: 20px;
       }
     }
@@ -417,10 +416,10 @@
     left: 0;
     right: 0;
     background-color: $color-gray-12;
-    opacity: .5;
+    opacity: 0.5;
     z-index: 9;
 
-    @media(min-width: $lg) {
+    @media (min-width: $lg) {
       background-color: transparent;
       opacity: 0;
       pointer-events: none;
@@ -437,7 +436,7 @@
     width: 100%;
     flex-shrink: 0;
 
-    @media(min-width: $lg) {
+    @media (min-width: $lg) {
       width: auto;
       flex-shrink: 1;
       margin-left: 270px;
@@ -461,7 +460,6 @@
     height: auto;
     padding: 16px;
     line-height: inherit;
-
   }
 
   &.navbar-fixed {
@@ -473,7 +471,7 @@
 
     &.has-sidebar .ant-layout > div > .ant-affix {
       z-index: 1;
-      @media(min-width: $lg) {
+      @media (min-width: $lg) {
         z-index: 10;
       }
     }
@@ -481,7 +479,7 @@
 
   // Header Notification Dropdown
   .header-notifications-dropdown {
-    @media(max-width: $sm) {
+    @media (max-width: $sm) {
       left: 20px !important;
       right: 20px !important;
     }
@@ -571,7 +569,7 @@
   }
 
   .ant-page-header-heading {
-    margin-top: 0;;
+    margin-top: 0;
 
     .ant-page-header-heading-title {
       font-weight: $fw-bold;
@@ -587,7 +585,7 @@
       width: 293px;
       margin: 0 7px 0 0;
 
-      @media(min-width: $md) {
+      @media (min-width: $md) {
         margin: 0 7px;
       }
 
@@ -631,7 +629,7 @@
     align-items: center;
     margin-top: 10px;
 
-    @media(min-width: $md) {
+    @media (min-width: $md) {
       margin-top: 0;
     }
 
@@ -664,7 +662,7 @@
         vertical-align: middle;
         display: none;
 
-        @media(min-width: $md) {
+        @media (min-width: $md) {
           display: inline;
         }
       }
@@ -680,7 +678,7 @@
 
     .sidebar-toggler {
       display: block;
-      @media(min-width: $lg) {
+      @media (min-width: $lg) {
         display: none;
       }
     }
@@ -694,7 +692,7 @@
     margin: 0px 20px 20px 20px;
     padding: 0px;
 
-    @media(min-width: $md) {
+    @media (min-width: $md) {
       margin: 0px 0px 20px 20px;
     }
 
@@ -704,7 +702,7 @@
       margin-top: 20px;
       text-align: center;
 
-      @media(min-width: $md) {
+      @media (min-width: $md) {
         margin-top: 0;
         text-align: right;
       }
@@ -743,7 +741,7 @@
       color: $color-gray-7;
       text-align: center;
 
-      @media(min-width: $md) {
+      @media (min-width: $md) {
         text-align: left;
       }
 

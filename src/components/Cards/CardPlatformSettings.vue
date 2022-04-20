@@ -3,7 +3,7 @@
   <a-card
     :bordered="false"
     class="header-solid h-full"
-    :bodyStyle="{ paddingTop: 0, paddingBottom: 0 }"
+    :body-style="{ paddingTop: 0, paddingBottom: 0 }"
   >
     <template #title>
       <h6 class="font-semibold m-0">Platform Settings</h6>

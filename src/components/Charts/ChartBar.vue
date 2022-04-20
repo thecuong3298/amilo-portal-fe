@@ -85,7 +85,7 @@ export default {
   },
   // Right before the component is destroyed,
   // also destroy the chart.
-  beforeDestroy: function () {
+  beforeUnmount: function () {
     this.chart.destroy();
   },
 };

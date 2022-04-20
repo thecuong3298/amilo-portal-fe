@@ -14,9 +14,9 @@
       <a-col :span="12" class="text-right">
         <a-space :size="-12" class="avatar-chips">
           <a-avatar
-            size="small"
             v-for="(img, index) in team"
             :key="index"
+            size="small"
             :src="img"
           />
         </a-space>

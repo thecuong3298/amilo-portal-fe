@@ -1,7 +1,7 @@
 <template>
   <div>
     <table-custom
-      :retrieveData="userManagementService.retrieve"
+      :retrieve-data="userManagementService.retrieve"
       :columns="columns"
     >
       <template #cell="{ column }">

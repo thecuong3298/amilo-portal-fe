@@ -3,7 +3,7 @@
   <a-card
     :bordered="false"
     class="header-solid h-full"
-    :bodyStyle="{ paddingTop: 0, paddingBottom: '16px' }"
+    :body-style="{ paddingTop: 0, paddingBottom: '16px' }"
   >
     <template #title>
       <h6 class="font-semibold m-0">Conversations</h6>
@@ -15,7 +15,7 @@
       :data-source="data"
     >
       <a-list-item slot="renderItem" slot-scope="item">
-        <a-button slot="actions" type="link"> REPLY </a-button>
+        <a-button slot="actions" type="link">REPLY</a-button>
         <a-list-item-meta :title="item.title" :description="item.code">
           <a-avatar
             slot="avatar"

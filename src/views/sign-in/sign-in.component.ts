@@ -23,7 +23,7 @@ export default class SignInComponent extends Vue {
     rememberMe: true,
   });
 
-  onFinish() {
+  onFinish(): void {
     this.userService
       .login(this.formState)
       .then(() => {
@@ -42,7 +42,7 @@ export default class SignInComponent extends Vue {
       });
   }
 
-  onFinishFailed() {
+  onFinishFailed(): void {
     console.log('fail', this.formState);
   }
 }

@@ -35,8 +35,8 @@
           </a-form-item>
 
           <a-form-item name="remember" :wrapper-col="{ offset: 8, span: 16 }">
-            <a-checkbox v-model:checked="formState.rememberMe"
-              >Remember me
+            <a-checkbox v-model:checked="formState.rememberMe">
+              Remember me
             </a-checkbox>
           </a-form-item>
 

@@ -3,13 +3,13 @@
   <a-card
     :bordered="false"
     class="header-solid h-full card-profile-information"
-    :bodyStyle="{ paddingTop: 0, paddingBottom: '16px' }"
-    :headStyle="{ paddingRight: 0 }"
+    :body-style="{ paddingTop: 0, paddingBottom: '16px' }"
+    :head-style="{ paddingRight: 0 }"
   >
     <template #title>
       <h6 class="font-semibold m-0">Profile Information</h6>
     </template>
-    <a-button type="link" slot="extra">
+    <a-button slot="extra" type="link">
       <svg
         width="20"
         height="20"
@@ -45,7 +45,7 @@
       <a-descriptions-item label="Email">
         sarahjacob@mail.com
       </a-descriptions-item>
-      <a-descriptions-item label="Location"> USA </a-descriptions-item>
+      <a-descriptions-item label="Location">USA</a-descriptions-item>
       <a-descriptions-item label="Social">
         <a href="#" class="mx-5 px-5">
           <a-icon type="twitter" style="color: #3ea1ec" />

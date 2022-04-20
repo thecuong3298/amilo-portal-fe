@@ -8,8 +8,7 @@
       :precision="0"
       class="text-success"
       :class="'text-' + status"
-    >
-    </a-statistic>
+    ></a-statistic>
     <div class="icon" v-html="icon"></div>
   </a-card>
 </template>

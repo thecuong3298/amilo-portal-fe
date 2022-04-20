@@ -7,13 +7,12 @@
         <!-- Header Breadcrumbs & Title Column -->
         <a-col :span="24" :md="6">
           <div class="brand-input-search">
-            <img :src="Logo" class="brand" style="width: 53.4px" />
+            <img :src="Logo" class="brand" style="width: 53.4px" alt=""/>
             <!-- Header Search Input -->
             <a-input-search
               class="header-search"
               :class="searchLoading ? 'loading' : ''"
               placeholder="Type here…"
-              @search="onSearch"
               :loading="searchLoading"
             >
               <svg
@@ -58,8 +57,8 @@
           <!-- Header Control Buttons -->
           <a-dropdown
             :trigger="['click']"
-            overlayClassName="header-notifications-dropdown"
-            :getPopupContainer="() => wrapper"
+            overlay-class-name="header-notifications-dropdown"
+            :get-popup-container="() => wrapper"
           >
             <a-badge count="4">
               <a class="ant-dropdown-link" @click="(e) => e.preventDefault()">
@@ -83,10 +82,10 @@
             </a-badge>
 
             <a-list
+              slot="overlay"
               item-layout="horizontal"
               class="header-notifications-list"
               :data-source="notificationsData"
-              slot="overlay"
             >
               <a-list-item slot="renderItem" slot-scope="item">
                 <a-list-item-meta>
@@ -116,8 +115,8 @@
                   />
                   <a-avatar
                     v-else
-                    shape="square"
                     slot="avatar"
+                    shape="square"
                     v-html="item.svg"
                   />
                 </a-list-item-meta>
@@ -125,8 +124,8 @@
             </a-list>
           </a-dropdown>
           <a-button
-            type="link"
             ref="secondarySidebarTriggerBtn"
+            type="link"
             @click="$emit('toggleSettingsDrawer', true)"
           >
             <svg

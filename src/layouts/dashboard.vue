@@ -2,8 +2,8 @@
   <div>
     <!-- Dashboard Layout -->
     <a-layout
-      class="layout-dashboard"
       id="layout-dashboard"
+      class="layout-dashboard"
       :class="[
         navbarFixed ? 'navbar-fixed' : '',
         !sidebarCollapsed ? 'has-sidebar' : '',
@@ -11,21 +11,21 @@
       ]"
     >
       <!-- Layout Header's Conditionally Fixed Wrapper -->
-      <DashboardHeader
-        :sidebarCollapsed="sidebarCollapsed"
-        :navbarFixed="navbarFixed"
-        @toggleSettingsDrawer="toggleSettingsDrawer"
-        @toggleSidebar="toggleSidebar"
-      ></DashboardHeader>
+      <dashboard-header
+        :sidebar-collapsed="sidebarCollapsed"
+        :navbar-fixed="navbarFixed"
+        @toggle-settings-drawer="toggleSettingsDrawer"
+        @toggle-sidebar="toggleSidebar"
+      ></dashboard-header>
       <!-- / Layout Header's Conditionally Fixed Wrapper -->
 
       <!-- Layout Content -->
       <a-layout>
         <!-- Main Sidebar -->
         <DashboardSidebar
-          :sidebarCollapsed="sidebarCollapsed"
-          :sidebarColor="sidebarColor"
-          :sidebarTheme="sidebarTheme"
+          :sidebar-collapsed="sidebarCollapsed"
+          :sidebar-color="sidebarColor"
+          :sidebar-theme="sidebarTheme"
           @toggleSidebar="toggleSidebar"
         ></DashboardSidebar>
         <!-- / Main Sidebar -->
@@ -38,9 +38,9 @@
 
         <!-- Sidebar Overlay -->
         <div
+          v-show="!sidebarCollapsed"
           class="sidebar-overlay"
           @click="sidebarCollapsed = true"
-          v-show="!sidebarCollapsed"
         ></div>
         <!-- / Sidebar Overlay -->
       </a-layout>

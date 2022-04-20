@@ -3,12 +3,12 @@
     <!-- Counter Widgets -->
     <a-row :gutter="24">
       <a-col
+        v-for="(stat, index) in stats"
+        :key="index"
         :span="24"
         :lg="12"
         :xl="6"
         class="mb-24"
-        v-for="(stat, index) in stats"
-        :key="index"
       >
         <!-- Widget 1 Card -->
         <WidgetCounter

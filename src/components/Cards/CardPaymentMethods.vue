@@ -3,7 +3,7 @@
   <a-card
     :bordered="false"
     class="header-solid h-full"
-    :bodyStyle="{ paddingTop: 0 }"
+    :body-style="{ paddingTop: 0 }"
   >
     <template #title>
       <a-row type="flex" align="middle">
@@ -15,7 +15,7 @@
           :md="12"
           style="display: flex; align-items: center; justify-content: flex-end"
         >
-          <a-button type="primary"> ADD NEW CARD </a-button>
+          <a-button type="primary">ADD NEW CARD</a-button>
         </a-col>
       </a-row>
     </template>

@@ -20,8 +20,9 @@
               fill="#111827"
             />
           </svg>
-          by <a href="https://creative-tim.com">Creative Tim</a> for a better
-          web.
+          by
+          <a href="https://creative-tim.com">Creative Tim</a>
+          for a better web.
         </p>
         <!-- / Footer Copyright Notice -->
       </a-col>

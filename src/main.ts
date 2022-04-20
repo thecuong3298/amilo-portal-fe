@@ -10,5 +10,5 @@ import TableComponent from '@/components/table/table.vue';
 const app = InitApp;
 app.use(Antd).use(store).use(router);
 app.use(i18n);
-app.component('table-custom', TableComponent);
+app.component('TableCustom', TableComponent);
 app.mount('#app');

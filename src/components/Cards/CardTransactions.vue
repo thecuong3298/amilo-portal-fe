@@ -3,7 +3,7 @@
   <a-card
     :bordered="false"
     class="header-solid h-full"
-    :bodyStyle="{ paddingTop: 0, paddingBottom: '16px' }"
+    :body-style="{ paddingTop: 0, paddingBottom: '16px' }"
   >
     <template #title>
       <h6 class="font-semibold m-0">Your Transactions</h6>
@@ -39,9 +39,9 @@
         <template v-else>
           <a-list-item-meta :title="item.title" :description="item.datetime">
             <a-avatar
-              size="small"
               v-if="item.type == 1"
               slot="avatar"
+              size="small"
               style="background-color: #edf9e7"
             >
               <svg
@@ -60,17 +60,17 @@
               </svg>
             </a-avatar>
             <a-avatar
-              size="small"
               v-if="item.type == 0"
               slot="avatar"
+              size="small"
               style="background-color: #fffce7"
             >
-              <strong class="text-warning"> ! </strong>
+              <strong class="text-warning">!</strong>
             </a-avatar>
             <a-avatar
-              size="small"
               v-if="item.type == -1"
               slot="avatar"
+              size="small"
               style="background-color: #fee9ea"
             >
               <svg

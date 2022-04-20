@@ -4,7 +4,10 @@
     <chart-bar :height="220" :data="barChartData"></chart-bar>
     <div class="card-title">
       <h6>Active Users</h6>
-      <p>than last week <span class="text-success">+23%</span></p>
+      <p>
+        than last week
+        <span class="text-success">+23%</span>
+      </p>
     </div>
     <div class="card-content">
       <p>

@@ -3,11 +3,14 @@
   <a-card
     :bordered="false"
     class="header-solid h-full"
-    :bodyStyle="{ paddingTop: '12px' }"
+    :body-style="{ paddingTop: '12px' }"
   >
     <template #title>
       <h6>Orders History</h6>
-      <p>this month <span class="text-success">+20%</span></p>
+      <p>
+        this month
+        <span class="text-success">+20%</span>
+      </p>
     </template>
     <a-timeline pending="Recording..." :reverse="timelineReverse">
       <a-timeline-item color="green">
